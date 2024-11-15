@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Restaurant</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .hero {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+        }
+        #gallery img {
+            margin-bottom: 15px;
+        }
+        #reviews, #reservations {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navdeep Restaurant</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+                <li class="nav-item"><a class="nav-link" href="#reservation">Reservation</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero bg-primary text-white text-center">
+        <div class="container">
+            <h1 class="display-4">Welcome to Our Restaurant</h1>
+            <p class="lead">Experience the best dishes made with love!</p>
+            <a href="#menu" class="btn btn-light btn-lg">View Menu</a>
+        </div>
+    </header>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-5"+>
+        <div class="container">
+            <h2 class="text-center">Our Menu</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="../../Images/fries5.png" class="card-img-top" alt="Dish 1">
+                        <div class="card-body">
+                            <h5 class="card-title">French fries</h5>
+                            <p class="card-text">Enjoy our perfectly golden and crispy French fries, made from premium potatoes.</p>
+                            <span class="badge badge-primary">₹100</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="../../Images/pizza6.png" class="card-img-top" alt="Dish 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Pizza</h5>
+                            <p class="card-text">Handcrafted pizza with a perfectly baked crust and fresh toppings.</p>
+                            <span class="badge badge-primary">₹150</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="../../Images/dosa4.png" class="card-img-top" alt="Dish 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Dosa</h5>
+                            <p class="card-text">A traditional South Indian dish, served with chutneys and sambar.</p>
+                            <span class="badge badge-primary">₹60</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="../../Images/momos.png" class="card-img-top" alt="Dish 4">
+                        <div class="card-body">
+                            <h5 class="card-title">Momos</h5>
+                            <p class="card-text">Delicious steamed momos, filled with spiced vegetables or chicken.</p>
+                            <span class="badge badge-primary">₹80</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center">Gallery</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="../../HTML/Images/gallery1.png" class="img-fluid" alt="Gallery Image 1">
+                </div>
+                <div class="col-md-4">
+                    <img src="../../HTML/Images/gallery2.png" class="img-fluid" alt="Gallery Image 2">
+                </div>
+                <div class="col-md-4">
+                    <img src="../../HTML/Images/gallery4.png" class="img-fluid" alt="Gallery Image 3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Customer Reviews</h2>
+            <div id="review-list" class="mb-4"></div>
+            <form id="review-form">
+                <div class="form-group">
+                    <label for="reviewer-name">Name</label>
+                    <input type="text" class="form-control" id="reviewer-name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="review-text">Review</label>
+                    <textarea class="form-control" id="review-text" rows="3" placeholder="Your review" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Review</button>
+            </form>
+            <h3></h3>
+            <div id="all-reviews"></div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center">Make a Reservation</h2>
+            <form id="reservation-form">
+                <div class="form-group">
+                    <label for="res-name">Name</label>
+                    <input type="text" class="form-control" id="res-name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="res-date">Date</label>
+                    <input type="date" class="form-control" id="res-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="res-time">Time</label>
+                    <input type="time" class="form-control" id="res-time" required>
+                </div>
+                <div class="form-group">
+                    <label for="res-people">Number of People</label>
+                    <input type="number" class="form-control" id="res-people" min="1" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Reserve Table</button>
+            </form>
+            <h3></h3>
+            <div id="reservation-list"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Contact Us</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Your message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+            <h3></h3>
+            <div id="contact-list"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+        <p>&copy; 2024 Modern Restaurant. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <script>
+        const reviewsKey = 'restaurantReviews';
+        const reservationsKey = 'restaurantReservations';
+        const contactsKey = 'restaurantContacts';
+    
+        // Load existing data from local storage
+        const loadData = () => {
+            const savedReviews = JSON.parse(localStorage.getItem(reviewsKey)) || [];
+            const savedReservations = JSON.parse(localStorage.getItem(reservationsKey)) || [];
+            const savedContacts = JSON.parse(localStorage.getItem(contactsKey)) || [];
+            savedReviews.forEach(review => reviews.push(review));
+            savedReservations.forEach(res => reservations.push(res));
+            savedContacts.forEach(contact => contacts.push(contact));
+          
+        };
+    
+        const reviews = [];
+        const reservations = [];
+        const contacts = [];
+    
+        document.addEventListener('DOMContentLoaded', loadData);
+    
+        document.getElementById('review-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('reviewer-name').value;
+            const reviewText = document.getElementById('review-text').value;
+    
+            // Store review
+            reviews.push({ name, text: reviewText });
+            localStorage.setItem(reviewsKey, JSON.stringify(reviews));
+            // Remove display after submission
+            // displayReviews();
+    
+            // Clear the form
+            document.getElementById('reviewer-name').value = '';
+            document.getElementById('review-text').value = '';
+        });
+    
+       
+    
+        document.getElementById('reservation-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('res-name').value;
+            const date = document.getElementById('res-date').value;
+            const time = document.getElementById('res-time').value;
+            const people = document.getElementById('res-people').value;
+    
+            // Store reservation
+            reservations.push({ name, date, time, people });
+            localStorage.setItem(reservationsKey, JSON.stringify(reservations));
+            // Remove display after submission
+            // displayReservations();
+    
+            // Clear the form
+            document.getElementById('res-name').value = '';
+            document.getElementById('res-date').value = '';
+            document.getElementById('res-time').value = '';
+            document.getElementById('res-people').value = '';
+        });
+    
+      
+    
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+    
+            // Store contact message
+            contacts.push({ name, email, message });
+            localStorage.setItem(contactsKey, JSON.stringify(contacts));
+            displayContacts();
+    
+            // Clear the form
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('message').value = '';
+        });
+    
+        function displayContacts() {
+            const contactList = document.getElementById('contact-list');
+            contactList.innerHTML = contacts.map((contact, index) => `
+                <div>
+                    <strong>${contact.name}</strong> (${contact.email}): ${contact.message}
+                    <button class="btn btn-danger btn-sm" onclick="deleteContact(${index})">Delete</button>
+                </div>
+            `).join('');
+        }
+    
+        function deleteContact(index) {
+            contacts.splice(index, 1);
+            localStorage.setItem(contactsKey, JSON.stringify(contacts));
+            displayContacts();
+        }
+    </script>
+    
+    
+</body>
+</html>
